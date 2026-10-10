@@ -2,7 +2,7 @@
   "version": "2.6.2",
   "summary": {
     "title": "Web App Feedback Flow (Corrected)",
-    "owner": "",
+    "owner": "alecbnono",
     "description": "Corrected version of the feedback-submission DFD: proper DFD notation, numbered request/response flows, named trust boundaries and STRIDE threats mapped to the right elements and flows.",
     "id": 0
   },
@@ -34,14 +34,13 @@
             "visible": true,
             "shape": "trust-boundary-box",
             "zIndex": 0,
-            "id": "d556ecbc-7954-42ce-88d5-a33a3bb215c1",
+            "id": "f1fe89fd-ef97-4f7a-9b40-13a7a2d63f46",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Internet (Untrusted)",
               "description": "",
               "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": false
             }
           },
           {
@@ -61,14 +60,13 @@
             "visible": true,
             "shape": "trust-boundary-box",
             "zIndex": 0,
-            "id": "ca579b0c-7c01-4ef5-a61c-7052dc13ba59",
+            "id": "80e54086-fd40-408a-ab95-8c361ab8e406",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Application Tier (DMZ)",
               "description": "",
               "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": false
             }
           },
           {
@@ -88,14 +86,13 @@
             "visible": true,
             "shape": "trust-boundary-box",
             "zIndex": 0,
-            "id": "70330b25-2c00-43bd-9aa4-f26b6cf74f9d",
+            "id": "d01b4a89-7f84-45ed-affd-c1f8a6bd1202",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Identity Tier (Internal)",
               "description": "",
               "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": false
             }
           },
           {
@@ -115,14 +112,13 @@
             "visible": true,
             "shape": "trust-boundary-box",
             "zIndex": 0,
-            "id": "3de62337-7274-453c-953c-2b8da06b1e6d",
+            "id": "1e9d8e0b-16b6-4138-8483-ba94715825ea",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Data Tier (Internal)",
               "description": "",
               "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": false
             }
           },
           {
@@ -139,15 +135,15 @@
                 "text": "Browser Client"
               },
               "body": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
               }
             },
             "visible": true,
             "shape": "actor",
             "zIndex": 1,
-            "id": "1aedac24-3042-4314-a3da-16ab88ee1a40",
+            "id": "7f3d6484-55c5-4a69-ad37-0e10cb7e98ef",
             "data": {
               "type": "tm.Actor",
               "name": "Browser Client",
@@ -157,7 +153,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "c7f43944-3928-4c18-913f-016a5d70f8c1",
+                  "id": "dc214134-8d38-4c51-b5dd-5ccb7380e03a",
                   "title": "Credential theft or session hijacking",
                   "status": "Open",
                   "severity": "High",
@@ -170,7 +166,7 @@
                   "score": ""
                 },
                 {
-                  "id": "352c8261-3e20-4e17-a23d-f936900f3ed8",
+                  "id": "5b81cf50-dfb3-45c5-bd64-530ba9118e41",
                   "title": "User denies submitting feedback",
                   "status": "Open",
                   "severity": "Low",
@@ -200,15 +196,15 @@
                 "text": "Web Application"
               },
               "body": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
               }
             },
             "visible": true,
             "shape": "process",
             "zIndex": 1,
-            "id": "73f71d56-0c88-4ac4-9c3e-86011fe04e81",
+            "id": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842",
             "data": {
               "type": "tm.Process",
               "name": "Web Application",
@@ -218,7 +214,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "d73ec227-89b2-43c9-af5b-400ab2874558",
+                  "id": "d4f56385-1377-4017-b9be-440ea09ff385",
                   "title": "Impersonation of the application or session fixation",
                   "status": "Open",
                   "severity": "Medium",
@@ -231,7 +227,7 @@
                   "score": ""
                 },
                 {
-                  "id": "bd56ac0d-99f2-407b-973a-40c93f6327cf",
+                  "id": "29559619-73b4-4b12-8ff3-00c88129ccb1",
                   "title": "SQL injection through the feedback comment",
                   "status": "Open",
                   "severity": "High",
@@ -244,7 +240,7 @@
                   "score": ""
                 },
                 {
-                  "id": "35fee6bf-9e07-496e-b471-b65b0e50063c",
+                  "id": "d44b38f1-41a8-4d1e-ba0f-d3beb7a75276",
                   "title": "Broken access control",
                   "status": "Open",
                   "severity": "High",
@@ -257,7 +253,7 @@
                   "score": ""
                 },
                 {
-                  "id": "6b627c0b-84fb-4a27-a5c7-a6fc8e5b2b90",
+                  "id": "45879d47-e72c-48a4-a1c3-94ba0287afc5",
                   "title": "Verbose errors leak internals",
                   "status": "Open",
                   "severity": "Medium",
@@ -270,7 +266,7 @@
                   "score": ""
                 },
                 {
-                  "id": "f1df2dc0-73f9-4b8f-b8b0-da1260b27fac",
+                  "id": "1bd7ffbc-f09c-4fab-a31b-b50062953af5",
                   "title": "Request flooding",
                   "status": "Open",
                   "severity": "Medium",
@@ -303,15 +299,15 @@
                 "text": "Authorization Provider"
               },
               "body": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
               }
             },
             "visible": true,
             "shape": "process",
             "zIndex": 1,
-            "id": "212f85a3-26cc-46a8-a9c1-439a251989f1",
+            "id": "99a4352b-158f-4b46-b3db-b966aca3d72b",
             "data": {
               "type": "tm.Process",
               "name": "Authorization Provider",
@@ -321,7 +317,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "c6c00029-66cf-4da7-9a87-f204ddad07f7",
+                  "id": "aa803171-046c-4e41-a339-8a1fc9c80c91",
                   "title": "Forged or replayed authentication tokens",
                   "status": "Open",
                   "severity": "High",
@@ -334,7 +330,7 @@
                   "score": ""
                 },
                 {
-                  "id": "fb575623-4c0f-4110-8836-8a99340c43d5",
+                  "id": "4410ad9e-1454-452e-8a34-da40ac3ebc18",
                   "title": "Role or claim manipulation",
                   "status": "Open",
                   "severity": "High",
@@ -367,20 +363,18 @@
                 "text": "LDAP Directory"
               },
               "topLine": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5
               },
               "bottomLine": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5
               }
             },
             "visible": true,
             "shape": "store",
             "zIndex": 1,
-            "id": "4a532e28-2369-4419-858f-06482564564a",
+            "id": "06049f06-7021-4431-be38-672055a61b2a",
             "data": {
               "type": "tm.Store",
               "name": "LDAP Directory",
@@ -390,7 +384,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "f327bc40-e813-42e1-bfd4-22ccb195e349",
+                  "id": "f0b90519-20ad-4fbb-b199-f8cc9e098239",
                   "title": "LDAP injection",
                   "status": "Open",
                   "severity": "High",
@@ -403,7 +397,7 @@
                   "score": ""
                 },
                 {
-                  "id": "556dcd79-29af-46ca-b283-351227a7c403",
+                  "id": "29423900-dc64-452d-805c-86cc26f76040",
                   "title": "Directory enumeration via anonymous bind",
                   "status": "Open",
                   "severity": "Medium",
@@ -437,20 +431,18 @@
                 "text": "SQL Database"
               },
               "topLine": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5
               },
               "bottomLine": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5
               }
             },
             "visible": true,
             "shape": "store",
             "zIndex": 1,
-            "id": "6fc11fcd-b976-4501-9c1c-342970f5c60f",
+            "id": "f6ee7610-a874-41ec-adaa-186395593de2",
             "data": {
               "type": "tm.Store",
               "name": "SQL Database",
@@ -460,7 +452,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "5ba51840-4061-4e4c-965e-a4cd5e142663",
+                  "id": "8da052c2-0265-4f45-9419-fd4ff4561725",
                   "title": "Modification via over-privileged application account",
                   "status": "Open",
                   "severity": "High",
@@ -473,7 +465,7 @@
                   "score": ""
                 },
                 {
-                  "id": "8e62b82a-8207-4ea8-a0f3-5117e5d642d0",
+                  "id": "381a2854-df1c-48cb-b014-62664d75b291",
                   "title": "Data exposure at rest",
                   "status": "Open",
                   "severity": "Medium",
@@ -507,20 +499,18 @@
                 "text": "Audit Log"
               },
               "topLine": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5
               },
               "bottomLine": {
-                "stroke": "#FF0000",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
+                "stroke": "red",
+                "strokeWidth": 2.5
               }
             },
             "visible": true,
             "shape": "store",
             "zIndex": 1,
-            "id": "3964d178-47b5-42e9-b328-cb47308df350",
+            "id": "2451cf51-1657-42eb-beab-644ae8e03817",
             "data": {
               "type": "tm.Store",
               "name": "Audit Log",
@@ -530,7 +520,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "c3f86fd4-4772-4fd7-accb-31de72023c4a",
+                  "id": "5e304ac7-68e1-45c2-b5e3-cf883f4da4a1",
                   "title": "Log tampering",
                   "status": "Open",
                   "severity": "Medium",
@@ -543,7 +533,7 @@
                   "score": ""
                 },
                 {
-                  "id": "a367d9ac-104c-48f0-a3ad-e945333db9a7",
+                  "id": "c9e269a6-2bea-463f-b3a9-62474da0280e",
                   "title": "Sensitive data written to logs",
                   "status": "Open",
                   "severity": "Medium",
@@ -567,12 +557,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -588,7 +579,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "94b836f1-6efc-4d05-904b-df296bf1fa04",
+                  "id": "7c331a20-86ea-4d6b-939c-3af4af4e3ce2",
                   "title": "Credentials intercepted in transit",
                   "status": "Open",
                   "severity": "High",
@@ -606,15 +597,15 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS"
             },
-            "id": "affa26eb-fe60-4e9a-90ab-0ccd045c64d5",
+            "id": "a2e178e9-3845-4f3a-bea9-cf3c38e3931d",
             "labels": [
               "1. Submit credentials"
             ],
             "source": {
-              "cell": "1aedac24-3042-4314-a3da-16ab88ee1a40"
+              "cell": "7f3d6484-55c5-4a69-ad37-0e10cb7e98ef"
             },
             "target": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "vertices": [
               {
@@ -627,12 +618,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -648,7 +640,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "b2c94bad-ec15-4627-b961-801aa269de21",
+                  "id": "cf9d36de-ec19-4a89-a136-887b4092a6ad",
                   "title": "Credentials exposed between app and identity provider",
                   "status": "Open",
                   "severity": "Medium",
@@ -666,15 +658,15 @@
               "isPublicNetwork": false,
               "protocol": "HTTPS"
             },
-            "id": "1b68e06e-2db2-4123-9d8e-284d9b3b5e80",
+            "id": "15497a27-7406-4927-a2f9-fb6f43c7ebf2",
             "labels": [
               "2. Validate credentials"
             ],
             "source": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "target": {
-              "cell": "212f85a3-26cc-46a8-a9c1-439a251989f1"
+              "cell": "99a4352b-158f-4b46-b3db-b966aca3d72b"
             },
             "vertices": [
               {
@@ -687,12 +679,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -708,7 +701,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "557083e4-56ee-4a22-af4d-3a479f6c1fa6",
+                  "id": "f86d0eb0-b20a-4414-863f-1f5a1f12aadd",
                   "title": "Cleartext LDAP exposes credentials",
                   "status": "Open",
                   "severity": "High",
@@ -726,15 +719,15 @@
               "isPublicNetwork": false,
               "protocol": "LDAPS"
             },
-            "id": "18df69e3-3639-4cfd-baa8-18ec4a2f8909",
+            "id": "cd5349ba-f237-42f2-8d79-46bae0ec8c16",
             "labels": [
               "3. LDAP bind and lookup"
             ],
             "source": {
-              "cell": "212f85a3-26cc-46a8-a9c1-439a251989f1"
+              "cell": "99a4352b-158f-4b46-b3db-b966aca3d72b"
             },
             "target": {
-              "cell": "4a532e28-2369-4419-858f-06482564564a"
+              "cell": "06049f06-7021-4431-be38-672055a61b2a"
             },
             "vertices": [
               {
@@ -747,12 +740,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -768,7 +762,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "049a4ab0-7f75-4662-8586-cd6f0546d824",
+                  "id": "b09a25ab-ebe5-483f-8d7f-c995d220ccb1",
                   "title": "Spoofed directory returns forged group membership",
                   "status": "Open",
                   "severity": "Medium",
@@ -786,15 +780,15 @@
               "isPublicNetwork": false,
               "protocol": "LDAPS"
             },
-            "id": "d305fce0-1cb8-451b-862e-eacf683f203b",
+            "id": "f8c66403-566f-4117-9c93-2bad0e2f6a89",
             "labels": [
               "4. Identity and group result"
             ],
             "source": {
-              "cell": "4a532e28-2369-4419-858f-06482564564a"
+              "cell": "06049f06-7021-4431-be38-672055a61b2a"
             },
             "target": {
-              "cell": "212f85a3-26cc-46a8-a9c1-439a251989f1"
+              "cell": "99a4352b-158f-4b46-b3db-b966aca3d72b"
             },
             "vertices": [
               {
@@ -807,12 +801,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -828,7 +823,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "fecfecec-a091-4969-897e-5bb1db959529",
+                  "id": "560f10c8-c552-454f-8d38-626e7aff649b",
                   "title": "Token altered in transit",
                   "status": "Open",
                   "severity": "High",
@@ -846,15 +841,15 @@
               "isPublicNetwork": false,
               "protocol": "HTTPS"
             },
-            "id": "bad0021d-6ab0-496d-adf5-a6e41b3234ac",
+            "id": "9c5e0317-9072-4c2f-9998-dbe23e89eb14",
             "labels": [
               "5. Auth result (signed token)"
             ],
             "source": {
-              "cell": "212f85a3-26cc-46a8-a9c1-439a251989f1"
+              "cell": "99a4352b-158f-4b46-b3db-b966aca3d72b"
             },
             "target": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "vertices": [
               {
@@ -867,12 +862,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -888,7 +884,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "349f2c95-b7b0-4ed5-92bf-d4efe448836f",
+                  "id": "8d0a8d11-966d-4d89-a028-6a1248b7181c",
                   "title": "Session cookie stolen",
                   "status": "Open",
                   "severity": "High",
@@ -906,15 +902,15 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS"
             },
-            "id": "3c5d2bbc-79df-4b05-9d39-569341313ab5",
+            "id": "8ac68ab7-7352-4400-8f78-31e3ef7c46d7",
             "labels": [
               "6. User authenticated (session cookie)"
             ],
             "source": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "target": {
-              "cell": "1aedac24-3042-4314-a3da-16ab88ee1a40"
+              "cell": "7f3d6484-55c5-4a69-ad37-0e10cb7e98ef"
             },
             "vertices": [
               {
@@ -927,12 +923,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -948,7 +945,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "94393c1c-850b-4d7a-ab74-fc6e232adabe",
+                  "id": "5a735958-8487-4a1a-8961-3f4988727920",
                   "title": "Comment altered in transit or forged via CSRF",
                   "status": "Open",
                   "severity": "Medium",
@@ -966,15 +963,15 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS"
             },
-            "id": "3ef2442b-525e-4af7-b6d9-874c557cc8f7",
+            "id": "81b2237f-fe02-435a-9c2e-77717064d725",
             "labels": [
               "7. Submit feedback comment"
             ],
             "source": {
-              "cell": "1aedac24-3042-4314-a3da-16ab88ee1a40"
+              "cell": "7f3d6484-55c5-4a69-ad37-0e10cb7e98ef"
             },
             "target": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "vertices": [
               {
@@ -987,12 +984,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -1008,7 +1006,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "9ced7a9c-fe89-47d8-8f9e-18b6636406dc",
+                  "id": "d251bc08-9518-4cf3-b8d4-2744bc8bf0b5",
                   "title": "Unencrypted database connection",
                   "status": "Open",
                   "severity": "Medium",
@@ -1026,15 +1024,15 @@
               "isPublicNetwork": false,
               "protocol": "TLS-protected SQL"
             },
-            "id": "e910fa8c-e530-4864-9c3c-806419510d6a",
+            "id": "fa860fd3-2697-4591-8ab7-912a858cb1b9",
             "labels": [
               "8. Parameterised INSERT (feedback)"
             ],
             "source": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "target": {
-              "cell": "6fc11fcd-b976-4501-9c1c-342970f5c60f"
+              "cell": "f6ee7610-a874-41ec-adaa-186395593de2"
             },
             "vertices": [
               {
@@ -1047,12 +1045,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -1068,7 +1067,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "d685d336-7caa-4cca-b44f-039540c3c529",
+                  "id": "d71a4e4e-60ec-467b-8366-0aa35cdfedfd",
                   "title": "Database errors passed back to the user",
                   "status": "Open",
                   "severity": "Low",
@@ -1086,15 +1085,15 @@
               "isPublicNetwork": false,
               "protocol": "TLS-protected SQL"
             },
-            "id": "05b3a07f-942b-4fc3-b1bf-67f98fe560df",
+            "id": "956edf77-4186-45e4-8c62-a91019526882",
             "labels": [
               "9. Insert result (rows affected)"
             ],
             "source": {
-              "cell": "6fc11fcd-b976-4501-9c1c-342970f5c60f"
+              "cell": "f6ee7610-a874-41ec-adaa-186395593de2"
             },
             "target": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "vertices": [
               {
@@ -1107,12 +1106,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -1128,7 +1128,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "207d365f-4209-4e71-9a86-54a509b6284a",
+                  "id": "b1c8efda-5e2c-47f2-acc6-17e871f0d818",
                   "title": "Stored XSS when comments are displayed",
                   "status": "Open",
                   "severity": "Medium",
@@ -1146,15 +1146,15 @@
               "isPublicNetwork": true,
               "protocol": "HTTPS"
             },
-            "id": "58652d75-abb5-4c0b-af94-049dc3ee4387",
+            "id": "32cafb49-5d97-4d80-a217-f1a01000b9c2",
             "labels": [
               "10. Confirmation: feedback saved"
             ],
             "source": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "target": {
-              "cell": "1aedac24-3042-4314-a3da-16ab88ee1a40"
+              "cell": "7f3d6484-55c5-4a69-ad37-0e10cb7e98ef"
             },
             "vertices": [
               {
@@ -1167,12 +1167,13 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#FF0000",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
                 "sourceMarker": "",
-                "strokeDasharray": "4 3"
+                "strokeDasharray": ""
               }
             },
             "width": 200,
@@ -1188,7 +1189,7 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "a6b0e4a8-07d7-47f8-bb96-bfbda969ee0f",
+                  "id": "57c8dda0-92c2-44fa-9709-2ab1f1870b1a",
                   "title": "Audit events silently dropped",
                   "status": "Open",
                   "severity": "Medium",
@@ -1206,15 +1207,15 @@
               "isPublicNetwork": false,
               "protocol": "TLS-protected"
             },
-            "id": "825e2a42-0c68-42ed-926e-3ec713c2ad9a",
+            "id": "08766ce3-1c99-4683-9178-0b1ea20864ae",
             "labels": [
               "11. Write audit event"
             ],
             "source": {
-              "cell": "73f71d56-0c88-4ac4-9c3e-86011fe04e81"
+              "cell": "64a6abfc-ebd5-49c2-b6dd-f1dfe93b6842"
             },
             "target": {
-              "cell": "3964d178-47b5-42e9-b328-cb47308df350"
+              "cell": "2451cf51-1657-42eb-beab-644ae8e03817"
             },
             "vertices": [
               {
