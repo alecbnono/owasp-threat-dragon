@@ -1,0 +1,1131 @@
+{
+  "version": "2.4.0",
+  "summary": {
+    "title": "Web App Feedback Flow (Corrected)",
+    "owner": "",
+    "description": "Corrected version of the feedback-submission DFD: proper DFD notation, numbered request/response flows, named trust boundaries and STRIDE threats mapped to the right elements and flows.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Feedback Submission - Data Flow",
+        "diagramType": "STRIDE",
+        "placeholder": "Corrected DFD with named trust boundaries and numbered flows",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.4.0",
+        "cells": [
+          {
+            "position": {
+              "x": 20,
+              "y": 300
+            },
+            "size": {
+              "width": 200,
+              "height": 300
+            },
+            "attrs": {
+              "headerText": {
+                "text": "Internet (Untrusted)"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": 0,
+            "id": "816ec32e-66b8-402d-b3ae-01530669b889",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Internet (Untrusted)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 420,
+              "y": 300
+            },
+            "size": {
+              "width": 240,
+              "height": 300
+            },
+            "attrs": {
+              "headerText": {
+                "text": "Application Tier (DMZ)"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": 0,
+            "id": "51ed678c-bc75-441b-939f-12dd581b4555",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Application Tier (DMZ)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 420,
+              "y": 20
+            },
+            "size": {
+              "width": 700,
+              "height": 200
+            },
+            "attrs": {
+              "headerText": {
+                "text": "Identity Tier (Internal)"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": 0,
+            "id": "5bd92a4c-ef69-4cde-8044-803d7113a6aa",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Identity Tier (Internal)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 860,
+              "y": 300
+            },
+            "size": {
+              "width": 260,
+              "height": 340
+            },
+            "attrs": {
+              "headerText": {
+                "text": "Data Tier (Internal)"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": 0,
+            "id": "025ca444-605f-4a82-b85a-343b747682d1",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Data Tier (Internal)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 420
+            },
+            "size": {
+              "width": 160,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Browser Client"
+              },
+              "body": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "id": "1a1c855b-0006-42c5-a3ed-455766f73340",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Browser Client",
+              "description": "End user's browser (external entity)",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "163a08a2-322e-4a98-a6d1-657581311a40",
+                  "title": "Credential theft or session hijacking",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker who obtains a user's credentials or session cookie can impersonate that user.",
+                  "mitigation": "MFA at the identity provider; HttpOnly, Secure and SameSite cookies; short session lifetime.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "b350ebc1-4a45-4fce-acb1-1fe62a1ef7c2",
+                  "title": "User denies submitting feedback",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "description": "Without a trustworthy record, a user can deny having submitted a comment.",
+                  "mitigation": "Write audit events (flow 11) with user ID, timestamp and source IP.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 470,
+              "y": 410
+            },
+            "size": {
+              "width": 140,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Web Application"
+              },
+              "body": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 1,
+            "id": "1ca95017-e805-43fd-bf90-502de321855f",
+            "data": {
+              "type": "tm.Process",
+              "name": "Web Application",
+              "description": "Handles login, session and feedback submission",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "376a6e14-2a77-4ce5-9898-58c360e5d7bc",
+                  "title": "Impersonation of the application or session fixation",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A fake site or a fixed session ID lets an attacker pose as the application or the user.",
+                  "mitigation": "TLS with a valid certificate, HSTS, regenerate the session ID on login.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "36ad06d6-3ea8-49c5-9fe5-635fb0bc2a59",
+                  "title": "SQL injection through the feedback comment",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Unsanitised comment text concatenated into the INSERT query allows data tampering.",
+                  "mitigation": "Parameterised queries or an ORM; input validation; output encoding.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "8ed722cc-f422-44d3-b390-1e7519c1195a",
+                  "title": "Broken access control",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Missing or client-side authorisation checks let a user perform actions beyond their role.",
+                  "mitigation": "Enforce authorisation server-side on every request; validate token claims; least privilege.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "0c0d63ef-c4f0-422f-8534-7b627217357f",
+                  "title": "Verbose errors leak internals",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Stack traces or DB errors returned to the client reveal schema and configuration.",
+                  "mitigation": "Generic error pages; log details server-side only.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                },
+                {
+                  "id": "e214df28-3dd2-4f54-84b9-71a4a4c49522",
+                  "title": "Request flooding",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Automated floods of login or feedback requests exhaust the application or database.",
+                  "mitigation": "Rate limiting, WAF, timeouts and connection limits.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": ""
+            }
+          },
+          {
+            "position": {
+              "x": 470,
+              "y": 70
+            },
+            "size": {
+              "width": 140,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Authorization Provider"
+              },
+              "body": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 1,
+            "id": "06c2855f-11c1-4f94-9755-9cec434cfcb7",
+            "data": {
+              "type": "tm.Process",
+              "name": "Authorization Provider",
+              "description": "Authenticates users and issues signed tokens",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "52386240-a2cf-4362-a13c-cfcef93f8083",
+                  "title": "Forged or replayed authentication tokens",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Weakly validated or unsigned tokens can be forged or replayed to impersonate users.",
+                  "mitigation": "Sign tokens; validate issuer, audience, expiry and nonce; use TLS.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                },
+                {
+                  "id": "fcbd8b18-3665-4f28-8c19-44ae2d0a7e23",
+                  "title": "Role or claim manipulation",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Tampering with roles or claims in a token grants higher privileges than assigned.",
+                  "mitigation": "Signed tokens; look up roles server-side; apply least privilege.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": ""
+            }
+          },
+          {
+            "position": {
+              "x": 940,
+              "y": 80
+            },
+            "size": {
+              "width": 160,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "LDAP Directory"
+              },
+              "topLine": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              },
+              "bottomLine": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 1,
+            "id": "41879f75-8f0d-4813-b87b-aacc5ec3dfa5",
+            "data": {
+              "type": "tm.Store",
+              "name": "LDAP Directory",
+              "description": "User and group directory",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "3cfdc62e-3b3d-457d-956a-986ba6c024df",
+                  "title": "LDAP injection",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Unescaped user input in LDAP search filters can alter queries or bypass authentication.",
+                  "mitigation": "Escape filter input; use parameterised LDAP APIs; read-only bind account.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                },
+                {
+                  "id": "057c3d17-2a2e-4bb7-8441-71c66767e441",
+                  "title": "Directory enumeration via anonymous bind",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Anonymous or over-broad binds let an attacker list users and attributes.",
+                  "mitigation": "Disable anonymous bind; restrict ACLs to required attributes.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ],
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": true,
+              "storesInventory": false
+            }
+          },
+          {
+            "position": {
+              "x": 910,
+              "y": 340
+            },
+            "size": {
+              "width": 160,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "SQL Database"
+              },
+              "topLine": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              },
+              "bottomLine": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 1,
+            "id": "97e35db4-6f09-40b3-9e91-11977a0a253f",
+            "data": {
+              "type": "tm.Store",
+              "name": "SQL Database",
+              "description": "Stores feedback comments",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a05a3351-8e1b-4f1f-80fb-baae1bc9275a",
+                  "title": "Modification via over-privileged application account",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "If the app account has broad rights, any injection or bug can alter or delete data.",
+                  "mitigation": "Use a least-privilege account (INSERT on the feedback table only); no DDL rights.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "ce86e6ef-f76d-4e08-8023-0a3c0be7dc51",
+                  "title": "Data exposure at rest",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Unencrypted data files or backups expose comments if the host is compromised.",
+                  "mitigation": "Encryption at rest; protect and encrypt backups.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false
+            }
+          },
+          {
+            "position": {
+              "x": 910,
+              "y": 520
+            },
+            "size": {
+              "width": 160,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Audit Log"
+              },
+              "topLine": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              },
+              "bottomLine": {
+                "stroke": "#FF0000",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 1,
+            "id": "8f20060f-fae7-4d7f-b2d4-d0aa86b1bdf6",
+            "data": {
+              "type": "tm.Store",
+              "name": "Audit Log",
+              "description": "Append-only record of security-relevant events",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "dd7b1678-903b-4ecc-86ad-6947ea0abf72",
+                  "title": "Log tampering",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An attacker who can edit logs can erase evidence of their actions.",
+                  "mitigation": "Append-only storage; separate permissions; integrity checks.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                },
+                {
+                  "id": "1c50d666-ec86-4001-937e-28b187b6a99e",
+                  "title": "Sensitive data written to logs",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Credentials or personal data logged in clear text can be read by anyone with log access.",
+                  "mitigation": "Never log credentials or tokens; mask personal data; restrict log access.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ],
+              "isALog": true,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#FF0000",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "1. Submit credentials",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "38099594-c979-4916-af02-8a9d2ed59971",
+                  "title": "Credentials intercepted in transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Credentials sent over an untrusted network can be sniffed without transport encryption.",
+                  "mitigation": "TLS 1.2+ only; HSTS; never accept credentials over HTTP.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS"
+            },
+            "id": "0dcbd04f-2f9a-4c83-869e-de88ae71dfcf",
+            "labels": [
+              "1. Submit credentials"
+            ],
+            "source": {
+              "cell": "1a1c855b-0006-42c5-a3ed-455766f73340"
+            },
+            "target": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 390
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2. Validate credentials / token request",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS"
+            },
+            "id": "41b4f64c-ea03-47ba-a20c-7346dcb39ff2",
+            "labels": [
+              "2. Validate credentials / token request"
+            ],
+            "source": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "target": {
+              "cell": "06c2855f-11c1-4f94-9755-9cec434cfcb7"
+            },
+            "vertices": [
+              {
+                "x": 500,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#FF0000",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "3. LDAP bind and lookup",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "ddd7041e-4158-43c3-bfb3-774c66da86df",
+                  "title": "Cleartext LDAP exposes credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Plain LDAP binds send credentials unencrypted across the network.",
+                  "mitigation": "Use LDAPS or StartTLS; restrict network access to the directory.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "LDAPS"
+            },
+            "id": "1d595269-5e0a-4094-a2fe-ba7dc18a3919",
+            "labels": [
+              "3. LDAP bind and lookup"
+            ],
+            "source": {
+              "cell": "06c2855f-11c1-4f94-9755-9cec434cfcb7"
+            },
+            "target": {
+              "cell": "41879f75-8f0d-4813-b87b-aacc5ec3dfa5"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "4. Identity and group result",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "LDAPS"
+            },
+            "id": "3fdb264c-8384-4254-bf9d-0460df602492",
+            "labels": [
+              "4. Identity and group result"
+            ],
+            "source": {
+              "cell": "41879f75-8f0d-4813-b87b-aacc5ec3dfa5"
+            },
+            "target": {
+              "cell": "06c2855f-11c1-4f94-9755-9cec434cfcb7"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 150
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#FF0000",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "5. Auth result (signed token)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "40584072-53ff-47f2-92d3-c6a2329acf60",
+                  "title": "Token altered in transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "A modified token could carry elevated claims back to the web application.",
+                  "mitigation": "Signed tokens plus TLS; verify the signature before trusting any claim.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS"
+            },
+            "id": "7123eb6c-a02c-4509-8aa2-f52aa2f68ee4",
+            "labels": [
+              "5. Auth result (signed token)"
+            ],
+            "source": {
+              "cell": "06c2855f-11c1-4f94-9755-9cec434cfcb7"
+            },
+            "target": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "vertices": [
+              {
+                "x": 580,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "6. User authenticated (session cookie)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS"
+            },
+            "id": "abcedfa1-55b3-4209-bd4a-de48af798d4e",
+            "labels": [
+              "6. User authenticated (session cookie)"
+            ],
+            "source": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "target": {
+              "cell": "1a1c855b-0006-42c5-a3ed-455766f73340"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#FF0000",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "7. Submit feedback comment",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "dafac18d-fb04-4758-9a16-34cb5b10dc9e",
+                  "title": "Comment altered in transit or forged via CSRF",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A forged cross-site request can submit or change a comment on the user's behalf.",
+                  "mitigation": "Anti-CSRF tokens; SameSite cookies; TLS.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS"
+            },
+            "id": "56d426f1-d26b-42ee-8c03-78bbcbf28daf",
+            "labels": [
+              "7. Submit feedback comment"
+            ],
+            "source": {
+              "cell": "1a1c855b-0006-42c5-a3ed-455766f73340"
+            },
+            "target": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 490
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "8. Parameterised INSERT (feedback)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TLS-protected SQL"
+            },
+            "id": "b7214722-974c-4730-bbef-b125242281c3",
+            "labels": [
+              "8. Parameterised INSERT (feedback)"
+            ],
+            "source": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "target": {
+              "cell": "97e35db4-6f09-40b3-9e91-11977a0a253f"
+            },
+            "vertices": [
+              {
+                "x": 760,
+                "y": 360
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "9. Insert result (rows affected)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TLS-protected SQL"
+            },
+            "id": "2bfb653f-3288-4635-82f5-fe051ab004a0",
+            "labels": [
+              "9. Insert result (rows affected)"
+            ],
+            "source": {
+              "cell": "97e35db4-6f09-40b3-9e91-11977a0a253f"
+            },
+            "target": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "vertices": [
+              {
+                "x": 760,
+                "y": 430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "10. Confirmation: feedback saved",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS"
+            },
+            "id": "fb264440-dfec-43a0-bd82-c976da311bc8",
+            "labels": [
+              "10. Confirmation: feedback saved"
+            ],
+            "source": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "target": {
+              "cell": "1a1c855b-0006-42c5-a3ed-455766f73340"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 530
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": "",
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "11. Write audit event",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TLS-protected"
+            },
+            "id": "4288e220-5a47-47e0-b9c1-ffb726ec2459",
+            "labels": [
+              "11. Write audit event"
+            ],
+            "source": {
+              "cell": "1ca95017-e805-43fd-bf90-502de321855f"
+            },
+            "target": {
+              "cell": "8f20060f-fae7-4d7f-b2d4-d0aa86b1bdf6"
+            },
+            "vertices": [
+              {
+                "x": 760,
+                "y": 540
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 19
+  }
+}
